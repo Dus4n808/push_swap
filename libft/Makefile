@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/10/27 09:47:09 by dufama           ###   ########.fr        #
+#    Updated: 2025/10/27 15:02:54 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,30 +23,31 @@ BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_
         ft_lstmap_bonus.c
 
 PRINTF_DIR = ft_printf
+PRINTF_LIB = $(PRINTF_DIR)/libftprintf.a
 
 SRCS = $(LIBC) $(ADDITIONAL) $(BONUS)
-
 OBJS = $(SRCS:.c=.o)
 
 NAME = libft.a
 
 CC = gcc
-
 AR = ar
-
 ARFLAGS = rcs
-
 RM = rm -f
-
-CFLAGS = -Wall -Werror -Wextra -I ./
+CFLAGS = -Wall -Wextra -Werror -I ./
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(AR) -$(ARFLAGS) $(NAME) $(OBJS)
+	@$(MAKE) -C $(PRINTF_DIR)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-all: $(NAME) printf
+
+$(PRINTF_LIB):
+	@$(MAKE) -C $(PRINTF_DIR)
+
+all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
@@ -57,17 +58,5 @@ fclean: clean
 	@$(MAKE) -C $(PRINTF_DIR) fclean
 
 re: fclean all
-	@$(MAKE) -C $(PRINTF_DIR) re
 
-printf:
-	@$(MAKE) -C $(PRINTF_DIR) all
-
-test: $(NAME) main.c
-	$(CC) $(CFLAGS) main.c -L. -lft -o test
-	./test
-
-test_bonus: all main.c
-	$(CC) $(CFLAGS) main.c -L. -lft -o test
-	./test
-
-.PHONY: all clean fclean re test test_bonus
+.PHONY: all clean fclean re
