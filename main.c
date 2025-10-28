@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/28 11:33:29 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/28 16:24:39 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,8 @@ int	main(void)
 	// ft_printf("===== Modification de la stack B\n");
 	// i_sb(&b);
 	// print_stack(b, 'B');
-	i_pa(&a, &b);
 	print_stack(a, 'A');
 	print_stack(b, 'B');
-
-
-
-
 
 	// Nettoyage mémoire
 	free_stack(a);

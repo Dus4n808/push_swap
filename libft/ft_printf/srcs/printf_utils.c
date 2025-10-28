@@ -6,11 +6,11 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:20:49 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/09 11:50:43 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/28 16:23:07 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_putchar_printf(char c)
 {

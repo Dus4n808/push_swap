@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/10/28 10:56:52 by dufama           ###   ########.fr        #
+#    Updated: 2025/10/28 16:26:24 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,8 @@ CFLAGS = -Wall -Werror -Wextra -I ./
 RM = rm -f
 
 LIBFT_DIR = ./libft
-PRINTF_DIR = $(LIBFT_DIR)/ft_printf
 
 LIBFT = $(LIBFT_DIR)/libft.a
-PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -45,5 +43,8 @@ fclean: clean
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
+
+test: all
+	./push_swap
 
 .PHONY: all clean fclean re
