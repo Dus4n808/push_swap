@@ -6,13 +6,14 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/10/28 16:26:24 by dufama           ###   ########.fr        #
+#    Updated: 2025/10/28 16:39:35 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c\
 		src/push_swap_operation.c \
-		src/push_swap_utils.c
+		src/push_swap_utils.c \
+		src/push_swap_parsing.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = push_swap

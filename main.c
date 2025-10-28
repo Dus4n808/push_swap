@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/28 16:24:39 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/28 17:00:08 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,36 +57,49 @@ void	free_stack(t_stack *stack)
 }
 
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ft_printf("======= stack a========\n");
-	t_stack *a;
+	// ft_printf("======= stack a========\n");
+	// t_stack *a;
 
-	a = creat_stack(5);
+	// a = creat_stack(5);
 
-	print_stack(a, 'A');
+	// print_stack(a, 'A');
 
-	// Appel de ta fonction
-	ft_printf("====== modification de la stack ========\n");
+	// // Appel de ta fonction
+	// ft_printf("====== modification de la stack ========\n");
 
-	i_sa(&a);
+	// i_sa(&a);
 
-	print_stack(a, 'A');
+	// print_stack(a, 'A');
 
-	ft_printf("===== creation de b =======\n");
-	t_stack *b;
+	// ft_printf("===== creation de b =======\n");
+	// t_stack *b;
 
-	b = creat_stack(5);
-	print_stack(b, 'B');
-	// ft_printf("===== Modification de la stack B\n");
-	// i_sb(&b);
+	// b = creat_stack(5);
 	// print_stack(b, 'B');
-	print_stack(a, 'A');
-	print_stack(b, 'B');
+	// // ft_printf("===== Modification de la stack B\n");
+	// // i_sb(&b);
+	// // print_stack(b, 'B');
+	// print_stack(a, 'A');
+	// print_stack(b, 'B');
 
-	// Nettoyage mémoire
-	free_stack(a);
-	free_stack(b);
+	// // Nettoyage mémoire
+	// free_stack(a);
+	// free_stack(b);
+	char **test = split_and_join(argc, argv);
+	if (check_if_is_valid_digit(test))
+	{
+		ft_printf("Error\nInvalid input (Only Digit)");
+		exit(1);
+	}
+	int i = 0;
+	while (test[i] != NULL)
+	{
+		ft_printf("%s\n", test[i]);
+		i++;
+	}
+	free(test);
 
 	return (0);
 }
