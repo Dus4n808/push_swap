@@ -6,48 +6,92 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/27 15:49:34 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/28 11:33:29 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	print_stack(t_stack *a, char stack)
+{
+	t_stack	*tmp;
+
+	tmp = a;
+	while (tmp)
+	{
+		ft_printf("Stack %c : %d\n",stack, tmp->value);
+		tmp = tmp->next;
+	}
+}
+
+t_stack	*creat_stack(int nbr_of_value)
+{
+	t_stack *head = NULL;
+	t_stack *new;
+	int i;
+
+	i = 1;
+	while (i <= nbr_of_value)
+	{
+		new = malloc(sizeof(t_stack));
+		if (!new)
+			return (NULL);
+		new->value = i;
+		new->next = NULL;
+		ft_push_back(&head, new);
+		i++;
+	}
+	return (head);
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_stack *tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
+}
+
+
 int	main(void)
 {
+	ft_printf("======= stack a========\n");
 	t_stack *a;
-	t_stack *second;
-	t_stack *third;
 
-	// Création manuelle de 3 éléments
-	a = malloc(sizeof(t_stack));
-	second = malloc(sizeof(t_stack));
-	third = malloc(sizeof(t_stack));
+	a = creat_stack(5);
 
-	// Initialisation des valeurs
-	a->value = 1;
-	second->value = 2;
-	third->value = 3;
-
-	// Chaînage des pointeurs
-	a->next = second;
-	second->next = third;
-	third->next = NULL;
-
-	// Affichage avant le swap
-	ft_printf("Avant swap : %d -> %d -> %d\n",
-		a->value, a->next->value, a->next->next->value);
+	print_stack(a, 'A');
 
 	// Appel de ta fonction
+	ft_printf("====== modification de la stack ========\n");
+
 	i_sa(&a);
 
-	// Affichage après le swap
-	ft_printf("Après swap : %d -> %d -> %d\n",
-		a->value, a->next->value, a->next->next->value);
+	print_stack(a, 'A');
+
+	ft_printf("===== creation de b =======\n");
+	t_stack *b;
+
+	b = creat_stack(5);
+	print_stack(b, 'B');
+	// ft_printf("===== Modification de la stack B\n");
+	// i_sb(&b);
+	// print_stack(b, 'B');
+	i_pa(&a, &b);
+	print_stack(a, 'A');
+	print_stack(b, 'B');
+
+
+
+
 
 	// Nettoyage mémoire
-	free(a->next->next);
-	free(a->next);
-	free(a);
+	free_stack(a);
+	free_stack(b);
 
 	return (0);
 }
