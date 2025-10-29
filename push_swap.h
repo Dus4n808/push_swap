@@ -12,6 +12,8 @@ typedef struct s_stack
 //Parsing et check
 char	**split_and_join(int argc, char **argv);
 int		check_if_is_valid_digit(char **tab);
+void	convert_tab_and_free_old(char **tab, int *tab_of_int, int size);
+int	count_size_of_tab(char **tab);
 //Instruction lié aux stacks
 void	ft_push_back(t_stack **head, t_stack *new);
 void	i_sa(t_stack **a);

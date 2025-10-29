@@ -49,3 +49,29 @@ int	check_if_is_valid_digit(char **tab)
 	}
 	return (0);
 }
+
+int	count_size_of_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
+}
+
+void	convert_tab_and_free_old(char **tab, int *tab_of_int, int size)
+{
+	int	i;
+
+	i = 0;
+	tab_of_int = malloc(size * sizeof(int));
+	if (!tab)
+		return ;
+	while (i < size)
+	{
+		tab_of_int[i] = ft_atoi(tab[i]);
+		i++;
+	}
+	free(tab);
+}

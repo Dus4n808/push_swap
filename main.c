@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/28 17:00:08 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/29 11:22:08 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,25 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", test[i]);
 		i++;
 	}
-	free(test);
+	int size = count_size_of_tab(test);
+	ft_printf("%d\n", size);
+
+
+	ft_printf("====== conversion en int ==========\n");
+
+	// int *tab_test;
+
+	// tab_test = NULL;
+	// convert_tab_and_free_old(test, &tab_test, size);
+	// i = 0;
+	// ft_printf("%d\n", tab_test);
+	// while (i < size)
+	// {
+	// 	ft_printf("%d\n", *tab_test[i]);
+	// 	i++;
+	// }
+
+
 
 	return (0);
 }
