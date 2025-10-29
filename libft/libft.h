@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:31:24 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/27 14:50:28 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/29 15:53:40 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_lstsize(t_list *lst);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));

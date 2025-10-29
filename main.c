@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/29 11:22:08 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:06:00 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,36 +59,8 @@ void	free_stack(t_stack *stack)
 
 int	main(int argc, char **argv)
 {
-	// ft_printf("======= stack a========\n");
-	// t_stack *a;
-
-	// a = creat_stack(5);
-
-	// print_stack(a, 'A');
-
-	// // Appel de ta fonction
-	// ft_printf("====== modification de la stack ========\n");
-
-	// i_sa(&a);
-
-	// print_stack(a, 'A');
-
-	// ft_printf("===== creation de b =======\n");
-	// t_stack *b;
-
-	// b = creat_stack(5);
-	// print_stack(b, 'B');
-	// // ft_printf("===== Modification de la stack B\n");
-	// // i_sb(&b);
-	// // print_stack(b, 'B');
-	// print_stack(a, 'A');
-	// print_stack(b, 'B');
-
-	// // Nettoyage mémoire
-	// free_stack(a);
-	// free_stack(b);
 	char **test = split_and_join(argc, argv);
-	if (check_if_is_valid_digit(test))
+	if (check_if_is_valid_digit(test) || check_overflow(test))
 	{
 		ft_printf("Error\nInvalid input (Only Digit)");
 		exit(1);
@@ -105,19 +77,23 @@ int	main(int argc, char **argv)
 
 	ft_printf("====== conversion en int ==========\n");
 
-	// int *tab_test;
+	int *tab_test;
 
-	// tab_test = NULL;
-	// convert_tab_and_free_old(test, &tab_test, size);
-	// i = 0;
-	// ft_printf("%d\n", tab_test);
-	// while (i < size)
-	// {
-	// 	ft_printf("%d\n", *tab_test[i]);
-	// 	i++;
-	// }
+	tab_test = convert_tab_and_free_old(test, size);
+	i = 0;
+	if (tab_test)
+	{
+		while (i < size)
+		{
+			ft_printf("%d\n", tab_test[i]);
+			i++;
+		}
+	}
 
-
-
+	if (check_duplicate(tab_test, size))
+	{
+		ft_printf("Error\nDouble Digits");
+		exit(1);
+	}
 	return (0);
 }
