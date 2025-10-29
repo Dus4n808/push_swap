@@ -6,42 +6,26 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/29 16:06:00 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:52:58 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *a, char stack)
+void	print_stack(t_stack *a, char *name)
 {
-	t_stack	*tmp;
-
-	tmp = a;
-	while (tmp)
+	ft_printf("Stack %s:\n", name);
+	if (!a)
 	{
-		ft_printf("Stack %c : %d\n",stack, tmp->value);
-		tmp = tmp->next;
+		ft_printf("(empty)\n");
+		return ;
 	}
-}
-
-t_stack	*creat_stack(int nbr_of_value)
-{
-	t_stack *head = NULL;
-	t_stack *new;
-	int i;
-
-	i = 1;
-	while (i <= nbr_of_value)
+	while (a)
 	{
-		new = malloc(sizeof(t_stack));
-		if (!new)
-			return (NULL);
-		new->value = i;
-		new->next = NULL;
-		ft_push_back(&head, new);
-		i++;
+		ft_printf("%d\n", a->value);
+		a = a->next;
 	}
-	return (head);
+	ft_printf("--------\n");
 }
 
 void	free_stack(t_stack *stack)
@@ -95,5 +79,13 @@ int	main(int argc, char **argv)
 		ft_printf("Error\nDouble Digits");
 		exit(1);
 	}
+	t_stack *stack_a;
+
+	stack_a = NULL;
+
+	fill_the_stack(tab_test, size, &stack_a);
+	print_stack(stack_a, "A");
+
+
 	return (0);
 }

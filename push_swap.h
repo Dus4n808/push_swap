@@ -18,7 +18,8 @@ int		count_size_of_tab(char **tab);
 int		check_duplicate(int *tab, int size);
 int		check_overflow(char **tab);
 //Instruction lié aux stacks
-void	ft_push_back(t_stack **head, t_stack *new);
+void	ft_push_back(t_stack **stack, t_stack *new);
+void	fill_the_stack(int *tab, int size, t_stack **a);
 void	i_sa(t_stack **a);
 void	i_sb(t_stack **b);
 
