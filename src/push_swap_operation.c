@@ -6,39 +6,58 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:16:26 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/28 16:21:14 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/30 16:01:10 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	i_sa(t_stack **a)
+void	i_pa(t_stack **a, t_stack **b)
 {
-	t_stack	*first;
-	t_stack *second;
+	t_stack	*tmp;
 
-	if (!a || !*a || !(*a)->next)
+	if (*b == NULL)
+	{
+		ft_printf("Stack B is empty\n");
 		return ;
-	first = *a;
-	second = (*a)->next;
-	first->next = second->next;
-	second->next = first;
-	*a = second;
-	ft_printf("sa\n");
+	}
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = *a;
+	*a = tmp;
+	ft_printf("pa\n");
 }
 
-void	i_sb(t_stack **b)
+void	i_pb(t_stack **a, t_stack **b)
 {
-	t_stack	*first;
-	t_stack *second;
+	t_stack	*tmp;
 
-	if (!b || !*b || !(*b)->next)
+	if (*a == NULL)
+	{
+		ft_printf("Stack A is empty\n");
 		return ;
-	first = *b;
-	second = (*b)->next;
-	first->next = second->next;
-	second->next = first;
-	*b = second;
-	ft_printf("sb\n");
+	}
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
+	ft_printf("pb\n");
+}
+
+void	i_ra(t_stack **a)
+{
+	t_stack	*top;
+	t_stack	*tmp;
+
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	top = *a;
+	*a = (*a)->next;
+	tmp = *a;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = top;
+	top->next = NULL;
+	ft_printf("ra\n");
 }
 

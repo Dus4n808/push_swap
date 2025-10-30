@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/10/29 16:04:55 by dufama           ###   ########.fr        #
+#    Updated: 2025/10/30 16:19:53 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ SRCS = main.c\
 		src/push_swap_operation.c \
 		src/push_swap_utils.c \
 		src/push_swap_parsing.c \
-		src/push_swap_check.c
+		src/push_swap_check.c \
+		src/push_swap_algo.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = push_swap

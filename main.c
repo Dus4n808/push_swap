@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/29 16:52:58 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/30 17:43:35 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_stack(t_stack *a, char *name)
 	}
 	while (a)
 	{
-		ft_printf("%d\n", a->value);
+		ft_printf("Valeurs : %d, Index : %d\n", a->value, a->index);
 		a = a->next;
 	}
 	ft_printf("--------\n");
@@ -39,7 +39,6 @@ void	free_stack(t_stack *stack)
 		stack = tmp;
 	}
 }
-
 
 int	main(int argc, char **argv)
 {
@@ -80,11 +79,23 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	t_stack *stack_a;
+	//t_stack *stack_b;
 
 	stack_a = NULL;
+	//stack_b = NULL;
 
 	fill_the_stack(tab_test, size, &stack_a);
 	print_stack(stack_a, "A");
+	//put_all_in_negatif(stack_a);
+	print_stack(stack_a, "A");
+	normalize_index(stack_a);
+	print_stack(stack_a, "A");
+
+	// i_pb(&stack_a, &stack_b);
+	// i_ra(&stack_a);
+	// print_stack(stack_a, "A");
+	// print_stack(stack_b, "B");
+
 
 
 	return (0);
