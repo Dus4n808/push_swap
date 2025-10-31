@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:16:26 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/30 16:01:10 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/31 13:33:38 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,3 @@ void	i_ra(t_stack **a)
 	top->next = NULL;
 	ft_printf("ra\n");
 }
-

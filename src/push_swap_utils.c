@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:17:46 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/30 16:26:51 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/31 13:39:57 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_push_back(t_stack **stack, t_stack *new)
 
 void	fill_the_stack(int *tab, int size, t_stack **a)
 {
-	int	i;
+	int		i;
 	t_stack	*new_node;
 
 	i = 0;
@@ -46,5 +46,16 @@ void	fill_the_stack(int *tab, int size, t_stack **a)
 		ft_push_back(a, new_node);
 		i++;
 	}
+}
 
+void	free_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
 }

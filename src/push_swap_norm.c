@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_algo.c                                   :+:      :+:    :+:   */
+/*   push_swap_norm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:19:24 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/30 16:54:56 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/31 13:32:56 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	put_all_in_negatif(t_stack *a)
 		tmp = tmp->next;
 	}
 }
+
 void	normalize_index(t_stack *a)
 {
 	int		index;
@@ -52,12 +53,39 @@ void	normalize_index(t_stack *a)
 	}
 }
 
-// int	found_max_bits(t_stack *a)
-// {
+int	found_max_bits(t_stack *a)
+{
+	t_stack	*tmp;
+	int		max_index;
+	int		bit;
 
-// }
+	tmp = a;
+	max_index = 0;
+	while (tmp)
+	{
+		if (tmp->index > max_index)
+			max_index = tmp->index;
+		tmp = tmp->next;
+	}
+	bit = 0;
+	while ((max_index >> bit) != 0)
+		bit++;
+	return (bit);
+}
 
-// void	radix_sort(t_stack **a, t_stack **b)
-// {
+int	stack_size(t_stack *size)
+{
+	t_stack	*tmp;
+	int		count;
 
-// }
+	tmp = size;
+	count = 0;
+	if (!size)
+		return (0);
+	while (tmp)
+	{
+		count++;
+		tmp = tmp->next;
+	}
+	return (count);
+}

@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:03:38 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/29 16:04:31 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/31 13:35:15 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	check_if_is_valid_digit(char **tab)
 		j = 0;
 		while (tab[i][j])
 		{
-			if (!(ft_isdigit(tab[i][j]) ||
-					(tab[i][j] == '-' && j == 0 && tab[i][j + 1] != '\0')))
+			if (!(ft_isdigit(tab[i][j])
+				|| (tab[i][j] == '-' && j == 0 && tab[i][j + 1] != '\0')))
 				return (1);
 			j++;
 		}
@@ -36,7 +36,7 @@ int	check_if_is_valid_digit(char **tab)
 int	check_overflow(char **tab)
 {
 	long	tmp;
-	int	i;
+	int		i;
 
 	i = 0;
 	while (tab[i])

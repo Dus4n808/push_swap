@@ -6,16 +6,17 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/10/30 16:19:53 by dufama           ###   ########.fr        #
+#    Updated: 2025/10/31 13:36:12 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c\
+SRCS = push_swap.c\
 		src/push_swap_operation.c \
 		src/push_swap_utils.c \
 		src/push_swap_parsing.c \
 		src/push_swap_check.c \
-		src/push_swap_algo.c
+		src/push_swap_norm.c \
+		src/push_swap_radix.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = push_swap
