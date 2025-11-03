@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:31:18 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 16:21:24 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/03 19:14:02 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	i_pb(t_stack **a, t_stack **b);
 void	i_ra(t_stack **a);
 void	i_rrb(t_stack **b);
 void	i_rra(t_stack **a);
+void	i_sa(t_stack **a);
+void	i_sb(t_stack **b);
 // Instruction algo
 void	put_all_in_negatif(t_stack *a);
 int		check_if_is_sort(t_stack *a);
@@ -46,4 +48,8 @@ int		found_max_bits(t_stack *a);
 int		stack_size(t_stack *size);
 void	check_bits_and_do(t_stack **a, t_stack **b, int i);
 void	radix_sort(t_stack **a, t_stack **b);
+void	sort_small_1_3(t_stack **a);
+void	sort_small_1_4(t_stack **a, t_stack **b);
+void	sort_small_5(t_stack **a, t_stack **b);
+
 #endif

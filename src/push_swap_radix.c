@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:41:44 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 16:21:41 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/03 19:11:56 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,3 @@ void	radix_sort(t_stack **a, t_stack **b)
 		i++;
 	}
 }
-
-// void	sort_1_5(t_stack **a, t_stack **b)
-// {
-// 	while (check_if_is_sort(&a))
-// 	{
-// 		if ((*a)->index > (*a)->next->index)
-// 			i_ra(a);
-// 		else
-// 			i_pb(a, b);
-// 	}
-// }
-
-// si le top a est plus grand que next->a
-// ra:
-// sinon pb:
-// sur stack
