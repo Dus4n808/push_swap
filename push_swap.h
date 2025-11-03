@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:31:18 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/31 13:40:16 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:21:24 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	free_stack(t_stack *stack);
 void	i_pa(t_stack **a, t_stack **b);
 void	i_pb(t_stack **a, t_stack **b);
 void	i_ra(t_stack **a);
+void	i_rrb(t_stack **b);
+void	i_rra(t_stack **a);
 // Instruction algo
 void	put_all_in_negatif(t_stack *a);
 int		check_if_is_sort(t_stack *a);

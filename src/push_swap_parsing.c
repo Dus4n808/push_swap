@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:01:23 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/31 14:08:25 by dufama           ###   ########.fr       */
+/*   Updated: 2025/10/31 16:50:38 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int	secruity_check(char **join, char *str)
 	free(tmp);
 	return (0);
 }
+
 char	**split_and_join(int argc, char **argv)
 {
 	char	**result;

@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/31 13:39:48 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/03 15:39:25 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,38 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	t_stack *node1 = malloc(sizeof(t_stack));
+	t_stack *node2 = malloc(sizeof(t_stack));
+	t_stack *node3 = malloc(sizeof(t_stack));
+	t_stack *current = NULL;
+
+	node1->value = 1;
+	node1->next = node2;
+	node2->value = 2;
+	node2->next = node3;
+	node3->value = 3;
+	node3->next = NULL;
+
+	current = node1;
+
+	while (current)
+	{
+		ft_printf("Valeur : %d\n", current->value);
+		current = current->next;
+	}
+	current = node1;
+	i_rrb(&current);
+	while (current)
+	{
+		ft_printf("Valeur : %d\n", current->value);
+		current = current->next;
+	}
+
+
+
 	tab = check_and_parse(argc, argv);
 	size = count_size_of_tab(tab);
+	ft_printf("%d\n", size);
 	tab_int = convert_tab_and_free_old(tab, size);
 	init_stack(&stack_a, &stack_b, size, tab_int);
 	if (check_if_is_sort(stack_a))
