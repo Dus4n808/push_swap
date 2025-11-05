@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/04 10:28:23 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/05 13:46:09 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static char	**check_and_parse(int argc, char **argv)
 	if (check_if_is_valid_digit(input) || check_overflow(input))
 	{
 		ft_printf("Error\n");
+		free_tab(input);
 		exit(1);
 	}
 	return (input);
@@ -68,6 +69,7 @@ int	main(int argc, char **argv)
 	size = count_size_of_tab(tab);
 	tab_int = convert_tab_and_free_old(tab, size);
 	init_stack(&stack_a, &stack_b, size, tab_int);
+	free(tab_int);
 	start_sort(&stack_a, &stack_b, size);
 	free_stack(stack_a);
 	free_stack(stack_b);

@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:31:18 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 19:14:02 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/05 11:39:32 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		*convert_tab_and_free_old(char **tab, int size);
 int		count_size_of_tab(char **tab);
 int		check_duplicate(int *tab, int size);
 int		check_overflow(char **tab);
+void	free_tab(char **tab);
 //Instruction lié aux stacks
 void	ft_push_back(t_stack **stack, t_stack *new);
 void	fill_the_stack(int *tab, int size, t_stack **a);

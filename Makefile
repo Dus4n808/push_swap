@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/11/05 10:41:34 by dufama           ###   ########.fr        #
+#    Updated: 2025/11/05 11:24:43 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ DEBUG_NAME = push_swap_debug
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I ./
 RM = rm -f
+
 
 LIBFT_DIR = ./libft
 
@@ -50,6 +51,9 @@ fclean: clean
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
+
+leaks:
+	valgrind --leak-check=full ./$(NAME)
 
 test: all
 	./$(NAME)
