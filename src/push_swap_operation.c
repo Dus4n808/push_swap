@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:16:26 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 16:21:09 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/04 10:27:15 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	i_ra(t_stack **a)
 
 void	i_rrb(t_stack **b)
 {
-	t_stack *before_last;
-	t_stack *tmp;
+	t_stack	*before_last;
+	t_stack	*tmp;
 
 	if (*b == NULL || !(*b) || (*b)->next == NULL)
 		return ;
@@ -83,8 +83,8 @@ void	i_rrb(t_stack **b)
 
 void	i_rra(t_stack **a)
 {
-	t_stack *before_last;
-	t_stack *tmp;
+	t_stack	*before_last;
+	t_stack	*tmp;
 
 	if (*a == NULL || !(*a) || (*a)->next == NULL)
 		return ;

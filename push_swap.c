@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 19:18:29 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/04 10:28:23 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	init_stack(t_stack **a, t_stack **b, int size, int *tab_int)
 	put_all_in_negatif(*a);
 	normalize_index(*a);
 }
+
 static void	start_sort(t_stack **a, t_stack **b, int size)
 {
 	if (check_if_is_sort(*a))

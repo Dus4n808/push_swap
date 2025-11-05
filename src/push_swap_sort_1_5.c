@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:11:26 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/03 19:13:32 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/04 10:27:43 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	sort_small_1_3(t_stack **a)
 	one = (*a)->index;
 	two = (*a)->next->index;
 	three = (*a)->next->next->index;
-
 	if (one > two && two < three && one < three)
 		i_sa(a);
 	else if (one > two && two > three)
