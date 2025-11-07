@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/11/05 11:24:43 by dufama           ###   ########.fr        #
+#    Updated: 2025/11/07 10:49:22 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ DEBUG_NAME = push_swap_debug
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I ./
 RM = rm -f
+GREEN = $(printf '\033[32m')
 
 
 LIBFT_DIR = ./libft
@@ -34,21 +35,21 @@ LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@$(MAKE) -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
+	@$(MAKE) -s -C $(LIBFT_DIR)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
 all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
-	@$(MAKE) -C $(LIBFT_DIR) clean
+	@$(MAKE) -s -C $(LIBFT_DIR) clean
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@$(MAKE) -s -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
