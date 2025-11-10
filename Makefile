@@ -6,7 +6,7 @@
 #    By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:20:06 by dufama            #+#    #+#              #
-#    Updated: 2025/11/07 10:49:22 by dufama           ###   ########.fr        #
+#    Updated: 2025/11/10 10:08:20 by dufama           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 DEBUG_NAME = push_swap_debug
 
-CC = gcc
+CC = gcc -g
 CFLAGS = -Wall -Werror -Wextra -I ./
 RM = rm -f
 GREEN = $(printf '\033[32m')

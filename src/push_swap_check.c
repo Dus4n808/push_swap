@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:03:38 by dufama            #+#    #+#             */
-/*   Updated: 2025/10/31 13:35:15 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/10 10:14:35 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	check_if_is_valid_digit(char **tab)
 		while (tab[i][j])
 		{
 			if (!(ft_isdigit(tab[i][j])
-				|| (tab[i][j] == '-' && j == 0 && tab[i][j + 1] != '\0')))
+				|| (tab[i][j] == '-' && j == 0 && tab[i][j + 1] != '\0')
+				|| (tab[i][j] == '+' && j == 0 && tab[i][j + 1] != '\0')))
 				return (1);
 			j++;
 		}
