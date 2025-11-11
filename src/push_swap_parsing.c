@@ -6,13 +6,13 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:01:23 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/05 11:09:15 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/11 12:48:04 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	secruity_check(char **join, char *str)
+static int	secruity_check(char**join, char *str)
 {
 	char	*tmp;
 
@@ -60,7 +60,7 @@ int	count_size_of_tab(char **tab)
 	return (i);
 }
 
-int	*convert_tab_and_free_old(char **tab, int size)
+int	*convert_tab(char **tab, int size)
 {
 	int	i;
 	int	*tab_of_int;
@@ -74,12 +74,5 @@ int	*convert_tab_and_free_old(char **tab, int size)
 		tab_of_int[i] = ft_atoi(tab[i]);
 		i++;
 	}
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
 	return (tab_of_int);
 }

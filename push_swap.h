@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:31:18 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/05 11:39:32 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/11 12:44:11 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 //Parsing et check
 char	**split_and_join(int argc, char **argv);
 int		check_if_is_valid_digit(char **tab);
-int		*convert_tab_and_free_old(char **tab, int size);
+int		*convert_tab(char **tab, int size);
 int		count_size_of_tab(char **tab);
 int		check_duplicate(int *tab, int size);
 int		check_overflow(char **tab);

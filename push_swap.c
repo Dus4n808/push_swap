@@ -6,7 +6,7 @@
 /*   By: dufama <dufama@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:04 by dufama            #+#    #+#             */
-/*   Updated: 2025/11/10 10:03:48 by dufama           ###   ########.fr       */
+/*   Updated: 2025/11/11 12:44:20 by dufama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	init_stack(t_stack **a, t_stack **b, int size, int *tab_int)
 	if (check_duplicate(tab_int, size))
 	{
 		ft_printf("Error\n");
+		free(tab_int);
 		exit(1);
 	}
 	fill_the_stack(tab_int, size, a);
@@ -67,7 +68,8 @@ int	main(int argc, char **argv)
 
 	tab = check_and_parse(argc, argv);
 	size = count_size_of_tab(tab);
-	tab_int = convert_tab_and_free_old(tab, size);
+	tab_int = convert_tab(tab, size);
+	free_tab(tab);
 	init_stack(&stack_a, &stack_b, size, tab_int);
 	free(tab_int);
 	start_sort(&stack_a, &stack_b, size);
